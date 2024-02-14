@@ -25,7 +25,10 @@ public class PuffStar : MonoBehaviour
     private GameManager gm;
     public CircleCollider2D hitBox;
 
-    // Start is called before the first frame update
+    // adding a firerate
+    public float fireRate;
+    public float timeTillFire;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -36,6 +39,8 @@ public class PuffStar : MonoBehaviour
         screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
         objectWidth = ballRender.bounds.extents.x; //extents = size of width / 2
         objectHeight = ballRender.bounds.extents.y; //extents = size of height / 2
+
+        timeTillFire = fireRate;
     }
 
     // Update is called once per frame
@@ -110,18 +115,23 @@ public class PuffStar : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && !isDragging && isAim)
         {
-            firePoint = this.transform;
-            GameObject shotFired = Instantiate(bullet, firePoint.position, firePoint.rotation);
-            BulletP shotBullet = shotFired.GetComponent<BulletP>();
-            shotBullet.speed = 20;
-            shotBullet.shotColor = shotColor;
-            shotColor = !shotColor;
-            isAim = false;
-            if (this.name == "Kirin")
+            if(timeTillFire <= 0)
             {
-                shotBullet.kirin = true;
+                timeTillFire = fireRate;
+                firePoint = this.transform;
+                GameObject shotFired = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                BulletP shotBullet = shotFired.GetComponent<BulletP>();
+                shotBullet.speed = 20;
+                shotBullet.shotColor = shotColor;
+                shotColor = !shotColor;
+                isAim = false;
+                if (this.name == "Kirin")
+                {
+                    shotBullet.kirin = true;
+                }
             }
         }
+        timeTillFire -= 0.1f;
     }
 
     private void BallColor()
