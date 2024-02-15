@@ -24,14 +24,9 @@ public class Boss3 : MonoBehaviour
         tf = this.GetComponent<Transform>();
         myColor = Random.value > 0.5f;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        if (myColor)
-        {
-            m_SpriteRenderer.color = Color.white;
-        }
-        else
-        {
+        
             m_SpriteRenderer.color = Color.black;
-        }
+        
         player = GameObject.FindGameObjectWithTag("Player");
         timer = 0;
         life = 75;

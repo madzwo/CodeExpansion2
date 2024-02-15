@@ -16,14 +16,9 @@ public class BossWing : MonoBehaviour
     {
         boss2 = this.GetComponentInParent<Boss2>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        if (myColor)
-        {
-            m_SpriteRenderer.color = Color.white;
-        }
-        else
-        {
+
             m_SpriteRenderer.color = Color.black;
-        }
+        
     }
 
     // Update is called once per frame
