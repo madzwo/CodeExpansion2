@@ -22,20 +22,14 @@ public class Boss2: MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         tf = this.GetComponent<Transform>();
-        myColor = Random.value > 0.5f;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        if (myColor)
-        {
-            m_SpriteRenderer.color = Color.white;
-        }
-        else
-        {
+        
             m_SpriteRenderer.color = Color.black;
-        }
+        
         player = GameObject.FindGameObjectWithTag("Player");
         timer = 0;
         movePhase = Random.value > 0.5f;
-        life = 50;
+        life = 10;
         pattern = Random.Range(0, 4);
     }
 

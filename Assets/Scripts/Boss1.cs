@@ -31,7 +31,7 @@ public class Boss1 : MonoBehaviour
         fireCount = 0;
         timer = 0;
         movePhase = Random.value > 0.5f;
-        life = 20;
+        life = 5;
     }
 
     // Update is called once per frame
@@ -69,7 +69,7 @@ public class Boss1 : MonoBehaviour
         }
         else
         {
-            fireCount = 20;
+            fireCount = 25;
             GameObject shotFired = Instantiate(bullet, this.transform.position, this.transform.rotation);
             BulletE1 shotBullet = shotFired.GetComponent<BulletE1>();
             shotBullet.angle = 180f;
@@ -79,24 +79,23 @@ public class Boss1 : MonoBehaviour
 
     public void GotHit(bool shotColor)
     {
-        if (myColor == shotColor)
-        {
-            Instantiate(explode, this.transform.position, this.transform.rotation);
-            Debug.Log("ouch");
-        }
-        else
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                GameObject shotFired = Instantiate(bullet2, this.transform.position, this.transform.rotation);
-                BulletE2 shotBullet = shotFired.GetComponent<BulletE2>();
-                shotBullet.angle = (180 - 60f) + (30f * i);
-                shotBullet.speed = 4.2f;
-                shotBullet.moveMode = 2;
-                shotBullet.shootMode = 1;
-
-            }
-        }
+        // if (myColor == shotColor)
+        // {
+        //     Instantiate(explode, this.transform.position, this.transform.rotation);
+        //     Debug.Log("ouch");
+        // }
+        // else
+        // {
+        //     for (int i = 0; i < 5; i++)
+        //     {
+        //         GameObject shotFired = Instantiate(bullet2, this.transform.position, this.transform.rotation);
+        //         BulletE2 shotBullet = shotFired.GetComponent<BulletE2>();
+        //         shotBullet.angle = (180 - 60f) + (30f * i);
+        //         shotBullet.speed = 4.2f;
+        //         shotBullet.moveMode = 2;
+        //         shotBullet.shootMode = 1;
+        //     }
+        // }
         life -= 1;
     }
 
