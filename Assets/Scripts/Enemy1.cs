@@ -22,16 +22,11 @@ public class Enemy1 : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         tf = this.GetComponent<Transform>();
         fireCount = Random.Range(10,100);
-        myColor = Random.value > 0.5f;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        if (myColor)
-        {
-            m_SpriteRenderer.color = Color.white;
-        }
-        else
-        {
+    
+        //getting rid of the black white thing not sure what they were going for/how to expand
             m_SpriteRenderer.color = Color.black;
-        }
+
         player = GameObject.FindGameObjectWithTag("Player");
         timer = 0;
     }

@@ -24,14 +24,9 @@ public class Boss1 : MonoBehaviour
         tf = this.GetComponent<Transform>();
         myColor = Random.value > 0.5f;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        if (myColor)
-        {
-            m_SpriteRenderer.color = Color.white;
-        }
-        else
-        {
+        
             m_SpriteRenderer.color = Color.black;
-        }
+            
         player = GameObject.FindGameObjectWithTag("Player");
         fireCount = 0;
         timer = 0;
@@ -42,45 +37,23 @@ public class Boss1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > 100 && timer < 200)
+        if (timer > 0 && timer < 75)
         {
-            if (movePhase)
-            {
-                transform.position = new Vector2(-4, 9);
-            }
-            else
-            {
-                transform.position = new Vector2(4, 9);
-            }
-        }
-        if (timer > 200 && timer < 300)
-        {
-            if (movePhase)
-            {
-                tf.Translate(Vector2.right * 0.08f);
-            }
-            else
-            {
-                tf.Translate(Vector2.left * 0.08f);
-            }
+            tf.Translate(Vector2.right * 0.08f);
             DownFire();
         }
-        if (timer > 300 && timer < 400)
+        if (timer > 75 && timer < 225)
         {
-            if (myColor)
-            {
-                m_SpriteRenderer.color = Color.black;
-            }
-            else
-            {
-                m_SpriteRenderer.color = Color.white;
-            }
-            myColor = !myColor;
+            tf.Translate(Vector2.left * 0.08f);
+            DownFire();
         }
-        if (timer > 400)
+        if (timer > 225 && timer < 300)
         {
-            transform.position = new Vector2(0, 6);
-            movePhase = Random.value > 0.5f;
+            tf.Translate(Vector2.right * 0.08f);
+            DownFire();
+        }
+        if (timer > 315)
+        {
             timer = 0;
             fireCount = 0;
         }

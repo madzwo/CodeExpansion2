@@ -28,14 +28,8 @@ public class BulletP : MonoBehaviour
     {
         tf.Translate(Vector2.up * speed/100);
 
-        if (shotColor)
-        {
             m_SpriteRenderer.color = Color.white;
-        }
-        else
-        {
-            m_SpriteRenderer.color = Color.black;
-        }
+       
 
         if (lifeSpan <= 0)
         {

@@ -123,7 +123,8 @@ public class PuffStar : MonoBehaviour
                 BulletP shotBullet = shotFired.GetComponent<BulletP>();
                 shotBullet.speed = 20;
                 shotBullet.shotColor = shotColor;
-                shotColor = !shotColor;
+                //get rid of alternating colors
+                // shotColor = !shotColor;
                 isAim = false;
                 if (this.name == "Kirin")
                 {
