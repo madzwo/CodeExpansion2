@@ -11,24 +11,53 @@ public class SeekingBullet : MonoBehaviour
     public float speed;
     public bool kirin;
     public bool shotColor;
-    public GameObject enemy;
+    GameObject enemy;
+    GameObject boss1;
+    GameObject boss2;
+    GameObject boss3;
+
+
     
 
     void Start()
     {
-        lifeSpan = 200;
+        lifeSpan = 100;
         tf = this.GetComponent<Transform>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        boss1 = GameObject.FindGameObjectWithTag("Boss1");
+        boss2 = GameObject.FindGameObjectWithTag("Boss2");
+        boss3 = GameObject.FindGameObjectWithTag("Boss3");
+
+
+
 
     }
 
     void Update()
     {
+        // bullet will follow bosses too, if there are no enemies or bosses it will destroy itself
         m_SpriteRenderer.color = Color.white;
-
-        transform.position = Vector2.MoveTowards(this.transform.position, enemy.transform.position, speed * Time.deltaTime);
-
+        if (enemy != null)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, enemy.transform.position, speed * Time.deltaTime);
+        }
+        else if (boss1 != null)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, boss1.transform.position, speed * Time.deltaTime);
+        }
+        else if (boss2 != null)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, boss2.transform.position, speed * Time.deltaTime);
+        }
+        else if (boss3 != null)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, boss3.transform.position, speed * Time.deltaTime);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         if (lifeSpan <= 0)
         {
             Destroy(gameObject);
