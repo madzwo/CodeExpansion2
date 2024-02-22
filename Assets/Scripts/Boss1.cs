@@ -37,6 +37,7 @@ public class Boss1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // here i changed how the boss moves using this same timer system
         if (timer > 0 && timer < 75)
         {
             tf.Translate(Vector2.right * 0.1f);
@@ -79,23 +80,7 @@ public class Boss1 : MonoBehaviour
 
     public void GotHit(bool shotColor)
     {
-        // if (myColor == shotColor)
-        // {
-        //     Instantiate(explode, this.transform.position, this.transform.rotation);
-        //     Debug.Log("ouch");
-        // }
-        // else
-        // {
-        //     for (int i = 0; i < 5; i++)
-        //     {
-        //         GameObject shotFired = Instantiate(bullet2, this.transform.position, this.transform.rotation);
-        //         BulletE2 shotBullet = shotFired.GetComponent<BulletE2>();
-        //         shotBullet.angle = (180 - 60f) + (30f * i);
-        //         shotBullet.speed = 4.2f;
-        //         shotBullet.moveMode = 2;
-        //         shotBullet.shootMode = 1;
-        //     }
-        // }
+        //got rid of a bunch of stuff
         life -= 1;
     }
 

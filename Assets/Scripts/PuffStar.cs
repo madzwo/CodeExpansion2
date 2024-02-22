@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PuffStar : MonoBehaviour
 {
-    float speed = 15f;
     private bool isDragging = false;
     private bool isAim = false;
     private Vector2 mousePosition;
@@ -25,7 +24,11 @@ public class PuffStar : MonoBehaviour
     private GameManager gm;
     public CircleCollider2D hitBox;
 
-    // adding a firerate
+    // changed variable name so I can make smooth movement
+    float dragToMoveSpeed = 10f;
+    public float speed;
+
+    // added a firerate
     public float fireRate;
     public float timeTillFire;
 
@@ -54,7 +57,6 @@ public class PuffStar : MonoBehaviour
             DragToMove();
         }
         AimToShoot();
-        BallColor();
         Hurting();
     }
 
@@ -68,14 +70,26 @@ public class PuffStar : MonoBehaviour
 
     private void KeyControls()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            transform.Translate(Vector2.up);
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            transform.Translate(Vector2.down);
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-            transform.Translate(Vector2.left);
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-            transform.Translate(Vector2.right);
+        //implimented smooth movement
+
+        Vector3 position = transform.position;
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(Vector2.down * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
     }
 
     private void LookAtMouse()
@@ -94,7 +108,7 @@ public class PuffStar : MonoBehaviour
 
     private void DragToMove()
     {
-        transform.position = Vector2.Lerp(transform.position, mousePosition, speed * Time.deltaTime);
+        transform.position = Vector2.Lerp(transform.position, mousePosition, dragToMoveSpeed * Time.deltaTime);
     }
 
     public void OnMouseDrag()
@@ -133,18 +147,6 @@ public class PuffStar : MonoBehaviour
             }
         }
         timeTillFire -= 0.1f;
-    }
-
-    private void BallColor()
-    {
-        if (shotColor)
-        {
-            ballRender.color = Color.white;
-        }
-        else
-        {
-            ballRender.color = Color.black;
-        }
     }
 
     private void Hurting()

@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
     {
         if (stagePhase)
         {
+            // Here I used this existing switch timer system to create level 1
             switch (timer)
             {
                 case 10:
@@ -179,6 +180,8 @@ public class GameManager : MonoBehaviour
     {
         if (stagePhase)
         {
+            // Here I did the same for level 2 and made the 
+            // enemies firetype 2 to have them aim at player
             switch (timer)
             {
                 case 10:

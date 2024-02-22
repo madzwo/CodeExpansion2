@@ -59,6 +59,7 @@ public class Boss2: MonoBehaviour
     {
         switch (timer)
         {
+            //changed where the boss moves
             case 50:
                 transform.position = new Vector2(-3, 7);
                 break;
