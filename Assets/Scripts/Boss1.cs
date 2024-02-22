@@ -39,17 +39,17 @@ public class Boss1 : MonoBehaviour
     {
         if (timer > 0 && timer < 75)
         {
-            tf.Translate(Vector2.right * 0.08f);
+            tf.Translate(Vector2.right * 0.1f);
             DownFire();
         }
         if (timer > 75 && timer < 225)
         {
-            tf.Translate(Vector2.left * 0.08f);
+            tf.Translate(Vector2.left * 0.1f);
             DownFire();
         }
         if (timer > 225 && timer < 300)
         {
-            tf.Translate(Vector2.right * 0.08f);
+            tf.Translate(Vector2.right * 0.1f);
             DownFire();
         }
         if (timer > 315)

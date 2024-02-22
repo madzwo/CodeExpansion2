@@ -93,14 +93,68 @@ public class GameManager : MonoBehaviour
     {
         if (stagePhase)
         {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            switch (timer)
             {
-                stagePhase = false;
-                bossPhase = true;
-                boss1.SetActive(true);
-                Debug.Log("woot");
+                case 10:
+                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    break;
+                case 150:
+                    EnemySpawn(new Vector2(-1, 11), 1, 1);
+                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-4, 11), 1, 1);
+                    EnemySpawn(new Vector2(4, 11), 1, 1);
+                    break;
+                case 200:
+                    EnemySpawn(new Vector2(-1, 11), 1, 1);
+                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-4, 11), 1, 1);
+                    EnemySpawn(new Vector2(4, 11), 1, 1);
+                    break;
+                case 500:
+                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-4, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(4, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    break;
+                case 550:
+                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    break;
+                case 1000:
+                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-4, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(4, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    break;
+                case 1500:
+                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-3, 11), 1, 1);
+                    EnemySpawn(new Vector2(-1, 11), 1, 1);
+                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(3, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    break;
+                case 2000:
+                    bossPhase = true;
+                    boss1.SetActive(true);
+                    Debug.Log("woot");
+                    break;
             }
         }
+
         if (bossPhase)
         {
             if (GameObject.FindGameObjectsWithTag("Boss1").Length == 0)
@@ -128,35 +182,53 @@ public class GameManager : MonoBehaviour
             switch (timer)
             {
                 case 10:
-                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(0, 11), 1, 2);
                     break;
                 case 100:
-                    EnemySpawn(new Vector2(-1, 11), 1, 1);
-                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-1, 11), 1, 2);
+                    EnemySpawn(new Vector2(0, 11), 1, 2);
+                    EnemySpawn(new Vector2(1, 11), 1, 2);
+                    EnemySpawn(new Vector2(2, 11), 1, 2);
+                    EnemySpawn(new Vector2(-2, 11), 1, 2);
+                    break;
+                case 150:
+                    EnemySpawn(new Vector2(-1, 11), 1, 2);
+                    EnemySpawn(new Vector2(0, 11), 1, 2);
+                    EnemySpawn(new Vector2(1, 11), 1, 2);
+                    EnemySpawn(new Vector2(2, 11), 1, 2);
+                    EnemySpawn(new Vector2(-2, 11), 1, 2);
                     break;
                 case 200:
-                    EnemySpawn(new Vector2(-5, 11), 1, 1);
-                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 2);
+                    EnemySpawn(new Vector2(5, 11), 1, 2);
                     break;
                 case 500:
-                    EnemySpawn(new Vector2(0, 11), 1, 1);
+                    EnemySpawn(new Vector2(0, 11), 1, 2);
                     break;
                 case 600:
-                    EnemySpawn(new Vector2(-4, 11), 2, 3);
-                    EnemySpawn(new Vector2(4, 11), 2, 3);
+                    EnemySpawn(new Vector2(-4, 11), 2, 2);
+                    EnemySpawn(new Vector2(4, 11), 2, 2);
                     break;
                 case 700:
-                    EnemySpawn(new Vector2(-5, 11), 1, 1);
-                    EnemySpawn(new Vector2(0, 11), 1, 1);
-                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 2);
+                    EnemySpawn(new Vector2(0, 11), 1, 2);
+                    EnemySpawn(new Vector2(5, 11), 1, 2);
                     break;
                 case 1000:
-                    EnemySpawn(new Vector2(-5, 11), 1, 1);
-                    EnemySpawn(new Vector2(-3, 11), 1, 1);
-                    EnemySpawn(new Vector2(-1, 11), 1, 1);
-                    EnemySpawn(new Vector2(1, 11), 1, 1);
-                    EnemySpawn(new Vector2(3, 11), 1, 1);
-                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 2);
+                    EnemySpawn(new Vector2(-3, 11), 1, 2);
+                    EnemySpawn(new Vector2(-1, 11), 1, 2);
+                    EnemySpawn(new Vector2(1, 11), 1, 2);
+                    EnemySpawn(new Vector2(3, 11), 1, 2);
+                    EnemySpawn(new Vector2(5, 11), 1, 2);
+                    break;
+                case 1050:
+                    EnemySpawn(new Vector2(-5, 11), 1, 2);
+                    EnemySpawn(new Vector2(-3, 11), 1, 2);
+                    EnemySpawn(new Vector2(-1, 11), 1, 2);
+                    EnemySpawn(new Vector2(1, 11), 1, 2);
+                    EnemySpawn(new Vector2(3, 11), 1, 2);
+                    EnemySpawn(new Vector2(5, 11), 1, 2);
                     break;
                 case 1250:
                     EnemySpawn(new Vector2(-5, 11), 1, 1);
@@ -170,54 +242,6 @@ public class GameManager : MonoBehaviour
                     EnemySpawn(new Vector2(-2, 11), 1, 1);
                     EnemySpawn(new Vector2(2, 11), 1, 1);
                     break;
-                // case 2900:
-                //     EnemySpawn(new Vector2(0, 11), 1, 1);
-                //     break;
-                // case 3000:
-                //     EnemySpawn(new Vector2(-1, 11), 1, 1);
-                //     EnemySpawn(new Vector2(1, 11), 1, 1);
-                //     break;
-                // case 3100:
-                //     EnemySpawn(new Vector2(-5, 11), 1, 1);
-                //     EnemySpawn(new Vector2(5, 11), 1, 1);
-                //     break;
-                // case 3300:
-                //     EnemySpawn(new Vector2(-3, 11), 1, 1);
-                //     EnemySpawn(new Vector2(3, 11), 1, 1);
-                //     break;
-                // case 3500:
-                //     EnemySpawn(new Vector2(-5, 11), 2, 3);
-                //     EnemySpawn(new Vector2(5, 11), 2, 3);
-                //     break;
-                // case 4000:
-                //     EnemySpawn(new Vector2(0, 11), 1, 1);
-                //     EnemySpawn(new Vector2(-1, 11), 1, 1);
-                //     EnemySpawn(new Vector2(1, 11), 1, 1);
-                //     break;
-                // case 4500:
-                //     EnemySpawn(new Vector2(-5, 11), 1, 1);
-                //     EnemySpawn(new Vector2(-3, 11), 1, 1);
-                //     EnemySpawn(new Vector2(-1, 11), 1, 1);
-                //     EnemySpawn(new Vector2(1, 11), 1, 1);
-                //     EnemySpawn(new Vector2(3, 11), 1, 1);
-                //     EnemySpawn(new Vector2(5, 11), 1, 1);
-                //     break;
-                // case 5000:
-                //     EnemySpawn(new Vector2(-5, 11), 2, 3);
-                //     EnemySpawn(new Vector2(5, 11), 2, 3);
-                //     break;
-                // case 5500:
-                //     EnemySpawn(new Vector2(-3, 11), 1, 1);
-                //     EnemySpawn(new Vector2(3, 11), 1, 1);
-                //     break;
-                // case 6000:
-                //     EnemySpawn(new Vector2(-2, 11), 2, 3);
-                //     EnemySpawn(new Vector2(2, 11), 2, 3);
-                //     break;
-                // case 6100:
-                //     EnemySpawn(new Vector2(-1, 11), 1, 1);
-                //     EnemySpawn(new Vector2(1, 11), 1, 1);
-                //     break;
                 case 2500:
                     bossPhase = true;
                     boss2.SetActive(true);
