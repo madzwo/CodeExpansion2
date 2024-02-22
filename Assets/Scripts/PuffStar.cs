@@ -19,6 +19,8 @@ public class PuffStar : MonoBehaviour
     private Transform firePoint;
     private SpriteRenderer ballRender;
     public GameObject explode;
+    public GameObject seekingExplode;
+
     private ParticleSystem ps;
     private int hurtTime;
     private GameManager gm;
@@ -32,6 +34,12 @@ public class PuffStar : MonoBehaviour
     public float fireRate;
     public float timeTillFire;
 
+    //added seeking bullets
+    public GameObject seekingBullet;
+    public float seekingBulletFireRate;
+    public float seekingBulletCooldown;
+
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -44,6 +52,7 @@ public class PuffStar : MonoBehaviour
         objectHeight = ballRender.bounds.extents.y; //extents = size of height / 2
 
         timeTillFire = fireRate;
+        seekingBulletCooldown = seekingBulletFireRate; 
     }
 
     // Update is called once per frame
@@ -57,6 +66,7 @@ public class PuffStar : MonoBehaviour
             DragToMove();
         }
         AimToShoot();
+        ShootSeekingBullet();
         Hurting();
     }
 
@@ -147,6 +157,22 @@ public class PuffStar : MonoBehaviour
             }
         }
         timeTillFire -= 0.1f;
+    }
+
+    // added seeking bullet
+    private void ShootSeekingBullet()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !isDragging)
+        {
+            if (seekingBulletCooldown <= 0)
+            {
+                firePoint = this.transform;
+                GameObject shotFired = Instantiate(seekingBullet, firePoint.position, firePoint.rotation);
+                seekingBulletCooldown = seekingBulletFireRate; 
+
+            }
+        }
+        seekingBulletCooldown -= 0.1f;
     }
 
     private void Hurting()
