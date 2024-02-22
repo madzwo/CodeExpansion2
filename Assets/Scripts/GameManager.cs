@@ -231,18 +231,18 @@ public class GameManager : MonoBehaviour
                     EnemySpawn(new Vector2(5, 11), 1, 2);
                     break;
                 case 1250:
-                    EnemySpawn(new Vector2(-5, 11), 1, 1);
+                    EnemySpawn(new Vector2(-5, 11), 1, 2);
                     EnemySpawn(new Vector2(-3, 11), 2, 3);
-                    EnemySpawn(new Vector2(-1, 11), 1, 1);
-                    EnemySpawn(new Vector2(1, 11), 1, 1);
+                    EnemySpawn(new Vector2(-1, 11), 1, 2);
+                    EnemySpawn(new Vector2(1, 11), 1, 2);
                     EnemySpawn(new Vector2(3, 11), 2, 3);
-                    EnemySpawn(new Vector2(5, 11), 1, 1);
+                    EnemySpawn(new Vector2(5, 11), 1, 2);
                     break;
                 case 1500:
-                    EnemySpawn(new Vector2(-2, 11), 1, 1);
-                    EnemySpawn(new Vector2(2, 11), 1, 1);
+                    EnemySpawn(new Vector2(-2, 11), 1, 2);
+                    EnemySpawn(new Vector2(2, 11), 1, 2);
                     break;
-                case 2500:
+                case 2000:
                     bossPhase = true;
                     boss2.SetActive(true);
                     Debug.Log("woot");

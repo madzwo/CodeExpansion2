@@ -29,7 +29,7 @@ public class Boss2: MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         timer = 0;
         movePhase = Random.value > 0.5f;
-        life = 10;
+        life = 25;
         pattern = Random.Range(0, 4);
     }
 
@@ -60,7 +60,7 @@ public class Boss2: MonoBehaviour
         switch (timer)
         {
             case 50:
-                transform.position = new Vector2(-4, 9);
+                transform.position = new Vector2(-3, 7);
                 break;
             case 100:
                 for (int i = 0; i < 5; i++)
@@ -77,7 +77,7 @@ public class Boss2: MonoBehaviour
                 }
                 break;
             case 150:
-                transform.position = new Vector2(4, 9);
+                transform.position = new Vector2(3, 7);
                 break;
             case 200:
                 for (int i = 0; i < 5; i++)
@@ -90,11 +90,10 @@ public class Boss2: MonoBehaviour
                     shotBullet.speed = 20f;
                     shotBullet.moveMode = 1;
                     shotBullet.shootMode = 2;
-
                 }
                 break;
             case 250:
-                transform.position = new Vector2(0, 6);
+                transform.position = new Vector2(0, 7);
                 break;
             case 300:
                 pattern = Random.Range(0, 4);
