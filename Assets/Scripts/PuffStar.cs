@@ -222,5 +222,20 @@ public class PuffStar : MonoBehaviour
                     break;
             }
         }
+
+        if (collision.tag == "Border")
+        {
+            speed *= 0.2f;
+            
+        }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Border")
+        {
+            speed *= 5.0f;
+        }
+    }
+
 }
