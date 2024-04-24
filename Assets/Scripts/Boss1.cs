@@ -38,22 +38,22 @@ public class Boss1 : MonoBehaviour
     void Update()
     {
         // here i changed how the boss moves using this same timer system
-        if (timer > 0 && timer < 75)
+        if ((timer > 0 && timer < 50) || (timer >= 200 && timer < 250))
         {
             tf.Translate(Vector2.right * 0.1f);
             DownFire();
         }
-        if (timer > 75 && timer < 225)
+        if (timer > 50 && timer < 150 || (timer >= 250 && timer < 350))
         {
             tf.Translate(Vector2.left * 0.1f);
             DownFire();
         }
-        if (timer > 225 && timer < 300)
+        if (timer > 150 && timer < 200 || (timer >= 350 && timer < 400))
         {
             tf.Translate(Vector2.right * 0.1f);
             DownFire();
         }
-        if (timer > 315)
+        if (timer > 600)
         {
             timer = 0;
             fireCount = 0;

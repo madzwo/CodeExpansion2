@@ -228,8 +228,7 @@ public class PuffStar : MonoBehaviour
 
         if (collision.tag == "Border")
         {
-            speed *= 0.2f;
-
+            speed *= 0.05f;
         }
     }
 
@@ -237,7 +236,7 @@ public class PuffStar : MonoBehaviour
     {
         if (collision.tag == "Border")
         {
-            speed *= 5.0f;
+            speed *= 20.0f;
         }
     }
 
