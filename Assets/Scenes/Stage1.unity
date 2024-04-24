@@ -176,7 +176,8 @@ PrefabInstance:
       value: Border
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3100491441216015040, guid: e1676c1bf2e494a3cb1deec7c873a1c2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1676c1bf2e494a3cb1deec7c873a1c2, type: 3}
@@ -884,6 +885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftBorder
       objectReference: {fileID: 0}
+    - target: {fileID: 6489362871475536318, guid: e1676c1bf2e494a3cb1deec7c873a1c2, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1175548129}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

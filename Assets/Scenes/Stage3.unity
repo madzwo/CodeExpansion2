@@ -613,7 +613,8 @@ PrefabInstance:
       value: Border (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3100491441216015040, guid: e1676c1bf2e494a3cb1deec7c873a1c2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1676c1bf2e494a3cb1deec7c873a1c2, type: 3}
