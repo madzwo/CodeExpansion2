@@ -12,6 +12,7 @@ TagManager:
   - Boss2
   - BossPart
   - Boss3
+  - Border
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,9 @@ public class PuffStar : MonoBehaviour
 
     private ParticleSystem ps;
     private int hurtTime;
+    // hurtTime above changes and goes down to 1
+    // new variable is the length of the particle effect
+    private int hurtDuration;
     private GameManager gm;
     public CircleCollider2D hitBox;
 
@@ -45,7 +48,8 @@ public class PuffStar : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         ballRender = this.GetComponentInChildren<SpriteRenderer>();
         ps = this.GetComponent<ParticleSystem>();
-        hurtTime = 300;
+        hurtDuration = 50;
+        hurtTime = hurtDuration;
         gm = GameManager.instance;
         screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
         objectWidth = ballRender.bounds.extents.x; //extents = size of width / 2
@@ -192,10 +196,9 @@ public class PuffStar : MonoBehaviour
     {
         if (hurtTime < 1)
         {
-            hurtTime = 300;
-            gm.PlayerHit();
+            hurtTime = hurtDuration;
         }
-        
+        gm.PlayerHit();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -226,7 +229,7 @@ public class PuffStar : MonoBehaviour
         if (collision.tag == "Border")
         {
             speed *= 0.2f;
-            
+
         }
     }
 
