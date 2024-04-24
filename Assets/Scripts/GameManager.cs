@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public Text livesText;
     private int playerLives;
     private int timer;
+    public GameObject slowZoneOne;
+    public GameObject slowZoneTwo;
+
 
     private void Awake()
     {
@@ -73,6 +76,8 @@ public class GameManager : MonoBehaviour
         {
             deadPhase = true;
             Destroy(GameObject.FindGameObjectWithTag("Player"));
+            slowZoneOne.SetActive(false);
+            slowZoneTwo.SetActive(false);
         }
     }
 

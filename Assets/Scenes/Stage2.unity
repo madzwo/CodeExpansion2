@@ -527,6 +527,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e18fb89db3a40c1accada68370ead9, type: 3}
+--- !u!1 &904147894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3251380021825868265, guid: 12e18fb89db3a40c1accada68370ead9, type: 3}
+  m_PrefabInstance: {fileID: 904147893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1180738689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,6 +589,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1edccf757fea142719c66a7d87ad005e, type: 3}
+--- !u!1 &1180738690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1576249817193294612, guid: 1edccf757fea142719c66a7d87ad005e, type: 3}
+  m_PrefabInstance: {fileID: 1180738689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1326959707
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +633,8 @@ MonoBehaviour:
   gameOverText: {fileID: 650606686}
   titleText: {fileID: 650606689}
   livesText: {fileID: 650606688}
+  slowZoneOne: {fileID: 904147894}
+  slowZoneTwo: {fileID: 1180738690}
 --- !u!4 &1326959709
 Transform:
   m_ObjectHideFlags: 0

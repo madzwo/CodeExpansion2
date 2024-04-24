@@ -128,6 +128,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1777348354398804419, guid: e95402937c6324e2bbdb3de83fbc68f3, type: 3}
   m_PrefabInstance: {fileID: 1817388725562241765}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &395473127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3251380021825868265, guid: 12e18fb89db3a40c1accada68370ead9, type: 3}
+  m_PrefabInstance: {fileID: 1448483191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &491423966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -355,6 +360,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &666835032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1576249817193294612, guid: 1edccf757fea142719c66a7d87ad005e, type: 3}
+  m_PrefabInstance: {fileID: 491423966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805669028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2097631368346151105, guid: e95402937c6324e2bbdb3de83fbc68f3, type: 3}
@@ -404,6 +414,8 @@ MonoBehaviour:
   gameOverText: {fileID: 978787511}
   titleText: {fileID: 805669028}
   livesText: {fileID: 1236037252}
+  slowZoneOne: {fileID: 395473127}
+  slowZoneTwo: {fileID: 666835032}
 --- !u!4 &1019549945
 Transform:
   m_ObjectHideFlags: 0
