@@ -233,6 +233,7 @@ public class Enemy1 : MonoBehaviour
         {
             case "Explode":
                 Destroy(gameObject);
+                // randomly spawn powerups
                 break;
         }
     }

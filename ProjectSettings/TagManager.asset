@@ -13,6 +13,8 @@ TagManager:
   - BossPart
   - Boss3
   - Border
+  - SlowZoneOne
+  - SlowZoneTwo
   layers:
   - Default
   - TransparentFX
