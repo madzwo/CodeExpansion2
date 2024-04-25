@@ -39,13 +39,13 @@ public class Boss2: MonoBehaviour
         switch (pattern)
         {
             case 0:
-                CornerSpread();
+                // CornerSpread();
                 break;
             case 1:
                 Eruption();
                 break;
             case 2:
-                BounceWaves();
+                // BounceWaves();
                 break;
             case 3:
                 TopRain();
@@ -327,7 +327,6 @@ public class Boss2: MonoBehaviour
             shotBullet.speed = 20f;
             shotBullet.moveMode = 2;
             shotBullet.shootMode = 2;
-
         }
         life -= 1;
     }
