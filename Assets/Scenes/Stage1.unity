@@ -695,6 +695,8 @@ MonoBehaviour:
   livesText: {fileID: 583388408}
   slowZoneOne: {fileID: 4756580126106278172}
   slowZoneTwo: {fileID: 6105555909174753260}
+  powerUp: {fileID: 2039560645197279314, guid: ab1b01cad4b1b40159f82cbf05f2f92c, type: 3}
+  powerUpSpawn: {fileID: 2026704689}
 --- !u!4 &1941295476
 Transform:
   m_ObjectHideFlags: 0
@@ -710,6 +712,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2026704689 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8532850223193239426, guid: 12e18fb89db3a40c1accada68370ead9, type: 3}
+  m_PrefabInstance: {fileID: 4756580126106278171}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4756580126106278171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,6 +768,10 @@ PrefabInstance:
     - target: {fileID: 7660081964729858085, guid: 12e18fb89db3a40c1accada68370ead9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532850223193239426, guid: 12e18fb89db3a40c1accada68370ead9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

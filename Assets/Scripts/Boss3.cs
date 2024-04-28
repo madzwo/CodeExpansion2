@@ -40,10 +40,10 @@ public class Boss3 : MonoBehaviour
         switch (pattern)
         {
             case 0:
-                Demarcation();
+                // Demarcation();
                 break;
             case 1:
-                MultiCircle();
+                // MultiCircle();
                 break;
             case 2:
                 HomingWaves();

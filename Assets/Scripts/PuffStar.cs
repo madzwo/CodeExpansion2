@@ -42,6 +42,12 @@ public class PuffStar : MonoBehaviour
     public float seekingBulletFireRate;
     public float seekingBulletCooldown;
 
+    private bool poweredUp = false;
+    public float powerFireRate;
+    private float powerTimeTillFire;
+    public GameObject powerBullet;
+    int powerBulletCount;
+
 
     void Start()
     {
@@ -59,7 +65,6 @@ public class PuffStar : MonoBehaviour
         seekingBulletCooldown = seekingBulletFireRate; 
     }
 
-    // Update is called once per frame
     void Update()
     {
         LookAtMouse();
@@ -141,12 +146,30 @@ public class PuffStar : MonoBehaviour
         {
             isAim = true;
         }
-        if (Input.GetMouseButtonUp(0) && !isDragging && isAim)
+        if(powerBulletCount >= 50)
+        {
+            poweredUp = false;
+        }
+        if (poweredUp)
+        {
+            if (powerTimeTillFire <= 0)
+            {
+                powerTimeTillFire = powerFireRate;
+                firePoint = this.transform;  
+                GameObject shotFired = Instantiate(powerBullet, firePoint.position, firePoint.rotation);
+                BulletP shotBullet = shotFired.GetComponent<BulletP>();
+                shotBullet.speed = 20;
+                shotBullet.shotColor = shotColor;
+                isAim = false;
+                powerBulletCount++;
+            }
+        }
+        else if (Input.GetMouseButtonUp(0) && !isDragging && isAim)
         {
             if(timeTillFire <= 0)
             {
                 timeTillFire = fireRate;
-                firePoint = this.transform;
+                firePoint = this.transform;    
                 GameObject shotFired = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 BulletP shotBullet = shotFired.GetComponent<BulletP>();
                 shotBullet.speed = 20;
@@ -161,6 +184,7 @@ public class PuffStar : MonoBehaviour
             }
         }
         timeTillFire -= 0.1f;
+        powerTimeTillFire -= 0.1f;
     }
 
     // added seeking bullet
@@ -225,6 +249,8 @@ public class PuffStar : MonoBehaviour
                     break;
             }
         }
+        
+        // implimented slow zone speeds
 
         if (collision.tag == "Border")
         {
@@ -238,7 +264,17 @@ public class PuffStar : MonoBehaviour
         {
             speed *= 0.8f;
         }
+
+        if(collision.tag == "powerUp")
+        {
+            Destroy(collision.gameObject);
+            poweredUp = true;
+            powerBulletCount = 0;
+        }
     }
+
+
+    // set speed back after exiting zone
 
     private void OnTriggerExit2D(Collider2D collision)
     {

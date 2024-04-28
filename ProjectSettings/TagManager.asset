@@ -15,6 +15,7 @@ TagManager:
   - Border
   - SlowZoneOne
   - SlowZoneTwo
+  - powerUp
   layers:
   - Default
   - TransparentFX

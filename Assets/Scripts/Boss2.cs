@@ -33,7 +33,6 @@ public class Boss2: MonoBehaviour
         pattern = Random.Range(0, 4);
     }
 
-    // Update is called once per frame
     void Update()
     {
         switch (pattern)
@@ -48,7 +47,7 @@ public class Boss2: MonoBehaviour
                 // BounceWaves();
                 break;
             case 3:
-                TopRain();
+                // TopRain();
                 break;
         }
         timer += 1;

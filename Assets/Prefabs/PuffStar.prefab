@@ -5192,6 +5192,8 @@ MonoBehaviour:
   seekingBullet: {fileID: 950129909998857098, guid: b73ff2e3b49e84146a5427d2e2f7a9ae, type: 3}
   seekingBulletFireRate: 25
   seekingBulletCooldown: 0
+  powerFireRate: 0.5
+  powerBullet: {fileID: 950129909998857098, guid: e1ab45a8229304237a49f3813dbf8acc, type: 3}
 --- !u!199 &312773143
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     private int timer;
     public GameObject slowZoneOne;
     public GameObject slowZoneTwo;
+    public GameObject powerUp;
+    public Transform powerUpSpawn;
 
 
     private void Awake()
@@ -122,7 +124,7 @@ public class GameManager : MonoBehaviour
                     EnemySpawn(new Vector2(-4, 11), 1, 2);
                     EnemySpawn(new Vector2(4, 11), 1, 2);
                     break;
-                case 500:
+                case 500:              
                     EnemySpawn(new Vector2(0, 11), 1, 2);
                     EnemySpawn(new Vector2(1, 11), 1, 2);
                     EnemySpawn(new Vector2(-1, 11), 1, 2);
@@ -135,6 +137,7 @@ public class GameManager : MonoBehaviour
                     EnemySpawn(new Vector2(-5, 11), 1, 2);
                     EnemySpawn(new Vector2(0, 11), 1, 2);
                     EnemySpawn(new Vector2(5, 11), 1, 2);
+                    Instantiate(powerUp, powerUpSpawn.transform.position, powerUpSpawn.transform.rotation);
                     break;
                 case 1000:
                     EnemySpawn(new Vector2(0, 11), 1, 2);
@@ -196,6 +199,7 @@ public class GameManager : MonoBehaviour
                     EnemySpawn(new Vector2(-1, 11), 1, 2);
                     EnemySpawn(new Vector2(0, 11), 1, 2);
                     EnemySpawn(new Vector2(1, 11), 1, 2);
+                    Instantiate(powerUp, powerUpSpawn.transform.position, powerUpSpawn.transform.rotation);
                     break;
                 case 150:
                     EnemySpawn(new Vector2(0, 11), 1, 2);
@@ -221,6 +225,7 @@ public class GameManager : MonoBehaviour
                     EnemySpawn(new Vector2(-1, 11), 1, 2);
                     EnemySpawn(new Vector2(1, 11), 1, 2);
                     EnemySpawn(new Vector2(5, 11), 1, 2);
+                    Instantiate(powerUp, powerUpSpawn.transform.position, powerUpSpawn.transform.rotation);
                     break;
                 case 1050:
                     EnemySpawn(new Vector2(-5, 11), 1, 2);
@@ -295,6 +300,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case 290:
                     EnemySpawn(new Vector2(4, 11), 3, 1);
+                    Instantiate(powerUp, powerUpSpawn.transform.position, powerUpSpawn.transform.rotation);
                     break;
                 case 320:
                     EnemySpawn(new Vector2(4, 11), 3, 1);
@@ -362,6 +368,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case 1000:
                     EnemySpawn(new Vector2(-3, 11), 2, 4);
+                    Instantiate(powerUp, powerUpSpawn.transform.position, powerUpSpawn.transform.rotation);
                     break;
                 case 1050:
                     EnemySpawn(new Vector2(5, 11), 2, 4);
@@ -489,6 +496,7 @@ public class GameManager : MonoBehaviour
                 case 2060:
                     EnemySpawn(new Vector2(-5, 11), 4, 0);
                     EnemySpawn(new Vector2(-4, 11), 4, 0);
+                    Instantiate(powerUp, powerUpSpawn.transform.position, powerUpSpawn.transform.rotation);
                     break;
                 case 2200:
                     EnemySpawn(new Vector2(4, 11), 2, 4);
